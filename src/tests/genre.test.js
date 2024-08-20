@@ -18,7 +18,7 @@ test('POST -> BASE_URL, should return statusCode 201, and res.body.name === genr
     .post(BASE_URL)
     .send(genre)
   
-  console.log(res.body)
+  // console.log(res.body)
   genreId = res.body.id
   expect(res.status).toBe(201)
   expect(res.body).toBeDefined()
@@ -48,7 +48,7 @@ test('PUT -> BASE_URL/genreId, should return statusCode 200, and res.body.name =
     .put(`${BASE_URL}/${genreId}`)
     .send(genreUpdate)
   
-  console.log(res.body)
+  // console.log(res.body)
   expect(res.status).toBe(200)
   expect(res.body).toBeDefined()
   expect(res.body.name).toBe(genreUpdate.name)
@@ -58,6 +58,6 @@ test('DELETE -> BASE_URL/genreId, should return statusCode 204', async() => {
   const res = await request(app)
     .delete(`${BASE_URL}/${genreId}`)
   
-  console.log(res.body)
+  // console.log(res.body)
   expect(res.status).toBe(204)
 })
